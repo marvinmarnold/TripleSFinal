@@ -16,7 +16,7 @@ def welcome():
 
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
- 	if request.method == 'GET':	
+	if request.method == 'GET':
 		return render_template('signin.html')
 	else:
 		loger = session.query(User).filter_by(name = request.form['username']).first()
@@ -39,7 +39,7 @@ def signin():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
- 	if request.method == 'GET':	
+	if request.method == 'GET':
 		return render_template('signup.html')
 	else:
 		new_name = request.form['username']
