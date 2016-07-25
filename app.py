@@ -29,14 +29,25 @@ def welcome():
 def signin():
 	error = None
 	if request.method == 'POST':
+		print('2')
 		name = str(request.form['username'])
+		print('3')
 		passwrd = str(request.form['password'])
+		print('4')
+		is_valid = validate(name, password)
+		print('1')
 		if is_valid == False:
+			print('1')
 			error = 'Invalid credentials. Please try again.'
 		else:
+			print('1')
 			session['name'] = name
+			print('2')
 			return redirect(url_for('lhome'))
+			print('3')
+	print('4')
 	return render_template('signin.html', error = error)
+
 
 
 
