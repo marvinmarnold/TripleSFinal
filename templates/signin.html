@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block style %}
-
+<head>
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='welcome.css')}}">
 	<title> Sign In</title>
-
+</head>
 {% endblock %}
 {% block content %}
-
+<body>
 
 
 <center>
@@ -37,5 +37,7 @@
 </form>
 
 </center>
+
+</body>
 
 {% endblock %}

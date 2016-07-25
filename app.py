@@ -12,7 +12,7 @@ session = DBSession()
 
 @app.route('/')
 def welcome():
-	return render_template("welcome.html")
+ 	return render_template("welcome.html")
 
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
@@ -32,8 +32,8 @@ def signin():
 				#wrong password
 
 		else:
-			print('didnt sign up')
-				#wrong password
+			print('didnt signup')
+			#you didnt sign up
 
 
 
@@ -65,9 +65,6 @@ def home():
 	return render_template("home.html")
 
 
-@app.route('/fullstory')
-def fullstory():
-	return render_template("fullstory.html")
 
 
 @app.route('/lhome/<uid>')
