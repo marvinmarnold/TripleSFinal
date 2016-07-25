@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect,url_for
+from flask import Flask, render_template, request, redirect,url_for, session
 app = Flask(__name__)
 
 from database_setup import Base, User,Story
@@ -8,6 +8,7 @@ engine = create_engine('sqlite:///crudlab.db')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
+import hashlib
 
 def hash_password(password):
 	return hashlib.md5(password.encode()).hexdigest()
@@ -45,19 +46,17 @@ def signup():
 		return render_template('signup.html')
 	else:
 		new_name = request.form['username']
-		#exists = db.session.query(User.id).filter_by(name='new_name').scalar() is not None
-		#print("1")
-		#if exists == 0 :
 		new_email = request.form['email']
-		new_password = request.form['password']
+		new_password = hash_password(request.form['password'])
 		new_age = request.form['age']
 		new_user= User(name=new_name,email=new_email,password=new_password,age = new_age)
 		session.add(new_user)
 		session.commit()
+		print('0')
 		session['name'] = name
+		print('1')
 		return redirect(url_for('lhome'))
-		#else:
-			#print ('user name taken')
+		print('2')
 
 @app.route('/contact')
 def contact():
