@@ -1,0 +1,71 @@
+#storyname {
+	color: #8B4513;
+}
+
+.h1 {
+    color: navy;
+    margin-left: 20px;
+}
+
+.headline {
+	color:"DC143C";
+	font-family: "Times New Roman";
+	font-style: italic;
+	font-size: 14px;
+	border-style: dotted;
+}
+#font { 
+font-family: times, Times New Roman, times-roman, georgia, serif;
+	color: #444;
+	margin: 0;
+	padding: 0px 0px 6px 0px;
+	font-size: 51px;
+	line-height: 44px;
+	letter-spacing: -2px;
+	font-weight: bold;
+}
+.items {
+font-size:30px;
+text-align: center
+font-style: italic;
+font-family: "Times New Roman", Times, serif;
+}
+
+body{
+	background-image: url("http://www.desktopimages.org/pictures/2013/0219/1/cartoon-vector-art-girl-ocean-sea-night-mood-trees-boats-sky-stars-cute-background-175582.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center; 
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+
+a.bla{
+	color: white;
+	font-size: 200%;
+}
+
+.yo{
+	width:200px;
+	height:200px;
+}
+
+p{
+	color: #8B4513;
+	font-weight: bold;
+	font-family: "monospace"
+}
+
+.tyrion{
+	padding-left: 10em;
+}
+
+.eddard{
+	padding-left: 10em;
+}
+
+.cersei{
+	padding-left: 10em;
+}
+

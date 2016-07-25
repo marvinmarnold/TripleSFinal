@@ -1,0 +1,70 @@
+<html>
+{% extends 'base.html' %}
+<head>
+
+{% block style %}
+
+{% endblock %}
+{% block content%}
+
+	<title>Profile</title>
+
+</head>
+
+<body style="background-color:gray">
+<br>
+
+<h1>Profile</h1>
+
+<br>
+<br>
+
+<form id="frm3" action="{{url_for('profile')}}"" method="POST" name="newusern">
+
+Change Username: 
+<input type="text" name="newusername">
+
+<br>
+
+<input id="newuser" type="submit" name="Submit" value="Save">
+
+</form>
+
+<br><br>
+
+<form id="frm3" action="{{url_for('profile')}}"" method="POST" name="newpassw">
+
+Change Password: 
+<input type="text" name="newpassword">
+
+<br>
+
+<input id="newpass" type="submit" name="Submit" value="Save">
+
+</form>
+
+<br><br>
+
+Change Background: <br><br>
+<form id="frm3" action="{{url_for('profile')}}"" method="POST" name="backgroundimg">
+	<input type="radio" name="bckimg" value="water"><img src="/static/underwater.jpg" height="100" width="150"><br><br>
+	<input type="radio" name="bckimg" value="space"><img src="/static/space.jpeg" height="100" width="150"><br><br>
+	<input type="radio" name="bckimg" value="forest"><img src="/static/nature.jpeg" height="100" width="150"><br><br>
+	<input type="radio" name="bckimg" value="aotumn"><img src="/static/fall.jpeg" height="100" width="150"><br><br>
+	<input type="submit" name="Submit" value="Save">
+</form>
+
+Change Avatar: <br><br>
+<form id="frm3" action="{{url_for('profile')}}"" method="POST" name="avatarimg">
+	<input type="radio" name="avtrimg" value="aang"><img src="/static/aang.png" height="100" width="150"> <br><br>
+	<input type="radio" name="avtrimg" value="swagy"><img src="/static/coolboy.jpeg" height="100" width="150"><br><br>
+	<input type="radio" name="avtrimg" value="powerpuffgreen"><img src="/static/powerpoffgrenn.png" height="100" width="150"><br><br>
+	<input type="radio" name="avtrimg" value="powerpuffpink"><img src="/static/powerpuffblue.jpg" height="100" width="150"><br><br>
+	<input type="submit" name="Submit" value="Save">
+</form>
+
+{% endblock %}
+
+</body>
+
+</html>

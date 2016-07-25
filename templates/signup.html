@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='welcome.css')}}">
+	<title> Sign Up</title>
+
+{% endblock %}
+{% block content %}
+
+
+
+<center>
+
+<h1> Sign Up </h1>
+
+<form id="frm3" action="{{url_for('signup')}}" method="POST">
+
+
+
+<input type="text" id="username" name="username" placeholder="user name" required="yes">
+
+<br>
+<br>
+
+<input type="password" id="password" name="password" placeholder="password" required="yes">
+
+<br>
+<br>
+
+<input type="email" id="email" name="email" placeholder="email" required="yes">
+
+<br>
+<br>
+
+<input type="text" id="age" name="age" placeholder="age" required="yes">
+
+
+
+<br>
+<br>
+
+<button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Sumbit</button>
+
+<br>
+<br>
+
+<button type="submit" class="btn btn-primary" id="submit" name="cancel" value="submit" formaction="{{url_for('welcome')}}">Cancel</button><br><br>
+
+</form>
+
+</center>
+
+
+{% endblock %}

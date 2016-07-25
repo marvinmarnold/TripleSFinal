@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='welcome.css')}}">
+	<title> Welcome Page </title>
+</head>
+<body>
+<center>
+
+<h1> Welcome </h1>
+<br>
+<form method="get">
+<button type="submit" id="submit" name="submit" formaction="{{url_for('signin')}}">Sign In</button>
+<br><br>
+<button type="submit" id="submit" name="submit" formaction="{{url_for('signup')}}">Sign Up</button>
+<br><br>
+<button type="submit" id="submit" name="submit" formaction="{{url_for('contact')}}">Contact Us</button>
+<br><br>
+</form>
+</center>
+</body>
+</html>

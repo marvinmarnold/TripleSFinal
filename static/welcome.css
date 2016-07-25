@@ -1,0 +1,83 @@
+h1{
+	color: "DC143C";
+}
+
+body{
+
+	background-image: url("http://www.desktopimages.org/pictures/2013/0219/1/cartoon-vector-art-girl-ocean-sea-night-mood-trees-boats-sky-stars-cute-background-175582.jpg");
+
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+a.bla{
+	color: "DC143C";
+	font-size: 200%;
+}
+
+.title2
+{
+
+
+
+font-size: 230%;
+
+
+
+
+
+}
+
+.title1
+{
+	font-size: 460%;
+}
+
+.t
+{
+	font-size: 50%;
+	color: "DC143C";
+
+}
+
+#pi{
+
+	color:white;
+	font-size:150%;
+}
+
+.doge{
+	text-align: left;
+	max-width: 550px;
+	float: center;
+
+}
+
+.fry{
+	float:right;
+
+}
+
+.moo{
+	padding-left: 10em;
+	font-size: 25px;
+	padding-bottom: 10em;
+}
+
+
+.block22{
+	padding-top: 50px;
+
+	width: 100%;
+	height: 100px;
+	margin:0 auto;
+	text-align: center;
+	background-color:black;
+}
+
+#email{
+	color:"DC143C";
+	font-size:150%;
+}
+

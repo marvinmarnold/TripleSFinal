@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block style %}
+
+<title>fullstory</title>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='welcome.css')}}">
+
+{% endblock %}
+{% block content %}
+
+<center>
+<div class="card">
+<img class="card-img-top" src="http://lovelace-media.imgix.net/uploads/750/d3ca5a80-19e7-0133-50c7-0ec273752cbd.png?w=684&h=513&fit=crop&crop=faces&auto=format&q=70">
+<div class="card-block">
+<h4 class="card-title">The Great Mulan</h4>
+<p class="card-text">Mulan kicking butt like a boss.</p>
+<a href="#" class="btn btn-primary"><button type="button" class="btn btn-warning">Back</button>
+</a>
+</div>
+</div>
+</center>
+
+{% endblock %}
