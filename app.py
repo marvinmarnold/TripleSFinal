@@ -9,31 +9,33 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+def hash_password(password):
+	return hashlib.md5(password.encode()).hexdigest()
+
+def validate(name, password):
+	query = DBSession.query(User).filter(User.name.in_([name]),User.password.in_([hash_password(password)]))
+	return query.first() != None
+
+
 
 @app.route('/')
 def welcome():
  	return render_template("welcome.html")
 
+
+
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
-	if request.method == 'GET':
-		return render_template('signin.html')
-	else:
-		loger = session.query(User).filter_by(name = request.form['username']).first()
-		print(loger)
-		if request.form['username'] == loger.name :
-			print ('after username')
-			if loger.password == request.form['password'] :
-				print ('after password')
-				return redirect(url_for('lhome',uid=loger.id))
-				print ('after redirect')
-			else:
-				print('wrong pass')
-				#wrong password
-
+	error = None
+	if request.method == 'POST':
+		name = str(request.form['username'])
+		passwrd = str(request.form['password'])
+		if is_valid == False:
+			error = 'Invalid credentials. Please try again.'
 		else:
-			print('didnt signup')
-			#you didnt sign up
+			session['name'] = name
+			return redirect(url_for('lhome'))
+	return render_template('signin.html', error = error)
 
 
 
@@ -52,7 +54,8 @@ def signup():
 		new_user= User(name=new_name,email=new_email,password=new_password,age = new_age)
 		session.add(new_user)
 		session.commit()
-		return redirect(url_for('lhome',uid=new_user.id))
+		session['name'] = name
+		return redirect(url_for('lhome'))
 		#else:
 			#print ('user name taken')
 
@@ -64,13 +67,20 @@ def contact():
 def home():
 	return render_template("home.html")
 
+@app.route('/fullstory')
+def fullstory():
+ 	return render_template("fullstory.html")
 
 
+@app.route('/lhome')
+def lhome():
+	name = sesion.get('name')
+	if not name:
+		return redirect(url_for('signin'))
+	else:
+		return render_template('lhome', name = name)
 
-@app.route('/lhome/<uid>')
-def lhome(uid):
-	user = session.query(User).filter_by(id = uid).first()
-	return render_template("lhome.html", user=user)
+
 
 @app.route('/profile')
 def profile():
