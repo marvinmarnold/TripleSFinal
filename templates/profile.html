@@ -8,27 +8,53 @@
 
 </head>
 {% endblock %}
-{% block content %}
-<body>
+{% block content%}
+<center> </center>
 
-<center>
+	<title>Profile</title>
 
-<form>
+</head>
 
-<form>
+<body >
+<br>
 
+<h1>Profile</h1>
 
+<br>
+<br>
 
-<h1>Your Profile</h1>
+<form name="detail" action="home.html" method="post">
 
-<div class= "doge">
+Change Password: 
+<input type="text" name="newpassword">
+<br><br>
+Change Username: 
+<input type="text" name="newusername">
+<br><br>
+<input type="submit" name="Submit" value="Save">
 
+</form>
 
+<br>
 
-</div>
+Change Background: <br><br>
+<form name="backgroundimg" action="home.html" method="post">
+	<input type="radio" name="bckimg" value="water"><img src="/static/underwater.jpg" height="100" width="150"><br><br>
+	<input type="radio" name="bckimg" value="space"><img src="/static/space.jpeg" height="100" width="150"><br><br>
+	<input type="radio" name="bckimg" value="forest"><img src="/static/nature.jpeg" height="100" width="150"><br><br>
+	<input type="radio" name="bckimg" value="aotumn"><img src="/static/fall.jpeg" height="100" width="150"><br><br>
+	<input type="submit" name="Submit" value="Save">
+</form>
 
-
-</center>
-</body>
+Change Avatar: <br><br>
+<form name="avatarimg" action="home.html" method="post">
+	<input type="radio" name="avtrimg" value="aang"><img src="/static/aang.png" height="100" width="150"> <br><br>
+	<input type="radio" name="avtrimg" value="swagy"><img src="/static/coolboy.jpeg" height="100" width="150"><br><br>
+	<input type="radio" name="avtrimg" value="powerpuffgreen"><img src="/static/powerpoffgrenn.png" height="100" width="150"><br><br>
+	<input type="radio" name="avtrimg" value="powerpuffpink"><img src="/static/powerpuffblue.jpg" height="100" width="150"><br><br>
+	<input type="submit" name="Submit" value="Save">
+</form>
 
 {% endblock %}
+
+</body>

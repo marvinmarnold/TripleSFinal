@@ -16,12 +16,13 @@ a.bla{
 	font-size: 200%;
 }
 
-.title2
-{
+.title2{
+
 
 
 
 font-size: 230%;
+color:white;
 
 
 
@@ -29,9 +30,10 @@ font-size: 230%;
 
 }
 
-.title1
-{
+.title1{
+
 	font-size: 460%;
+	color:white;
 }
 
 .t
