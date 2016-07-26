@@ -1,20 +1,26 @@
-from flask import Flask, render_template, request, redirect,url_for, session
-app = Flask(__name__)
 
-from database_setup import Base, User,Story
+from sqlalchemy.orm import *
+from flask import *
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-engine = create_engine('sqlite:///crudlab.db')
-Base.metadata.create_all(engine)
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
-import hashlib
+from database_setup import Base, User
+from sqlalchemy.orm import scoped_session, sessionmaker
 
+
+engine = create_engine('sqlite:///flasky.db')
+Base.metadata.create_all(engine)
+Base.metadata.bind = engine
+
+#DBSessionMaker = sessionmaker(bind=engine)
+#DBSession = DBSessionMaker()
+DBSession = scoped_session(sessionmaker())
+app = Flask(__name__)
 def hash_password(password):
 	return hashlib.md5(password.encode()).hexdigest()
 
 def validate(name, password):
-	query = DBSession.query(User).filter(User.name.in_([name]),User.password.in_([hash_password(password)]))
+	print('in validate')
+	query = DBSession.query(User)#.filter(User.name.in_([name]),User.password.in_([hash_password(password)]))
+	print('after query')
 	return query.first() != None
 
 
@@ -30,13 +36,22 @@ def signin():
 	error = None
 	if request.method == 'POST':
 		name = str(request.form['username'])
-		passwrd = str(request.form['password'])
+		password = str(request.form['password'])
+		print('pre validate')
+		is_valid = validate(name, password)
+		print('1')
 		if is_valid == False:
+			print('1')
 			error = 'Invalid credentials. Please try again.'
 		else:
+			print('2')
 			session['name'] = name
+			print('2')
 			return redirect(url_for('lhome'))
+			print('3')
+	print('4')
 	return render_template('signin.html', error = error)
+
 
 
 
@@ -50,8 +65,8 @@ def signup():
 		new_password = hash_password(request.form['password'])
 		new_age = request.form['age']
 		new_user= User(name=new_name,email=new_email,password=new_password,age = new_age)
-		session.add(new_user)
-		session.commit()
+		DBSession.add(new_user)
+		DBSession.commit()
 		print('0')
 		session['name'] = name
 		print('1')
@@ -73,7 +88,7 @@ def fullstory():
 
 @app.route('/lhome')
 def lhome():
-	name = sesion.get('name')
+	name = session.get('name')
 	if not name:
 		return redirect(url_for('signin'))
 	else:
