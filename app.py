@@ -13,6 +13,7 @@ DBSession = scoped_session(sessionmaker())
 app = Flask(__name__)
 app.secret_key = 'super secret string'
 
+
 def hash_password(password):
 	return hashlib.md5(password.encode()).hexdigest()
 
@@ -22,13 +23,10 @@ def validate(name, password):
 
 
 
-@app.route('/')
-def welcome():
- 	return render_template("welcome.html")
 
 
 
-@app.route('/signin', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def signin():
 	error = None
 	if request.method == 'POST':
@@ -40,12 +38,10 @@ def signin():
 			error = 'Invalid credentials. Please try again.'
 		else:
 			print('is valid = true')
-			print(session)
 			session['name'] = name
-			print('session set')
 			return redirect(url_for('lhome'))
-	print('outside IF')
-	return render_template('signin.html', error = error)
+	print('else')
+	return render_template('newindex.html', error = error)
 
 
 
@@ -88,8 +84,7 @@ def lhome():
 		return redirect(url_for('signin'))
 	else:
 		print('good name')
-		return render_template('lhome', name = name)
-
+		return render_template('lhome.html', name = name)
 
 
 @app.route('/profile')
