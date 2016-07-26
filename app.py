@@ -1,26 +1,23 @@
 
-from sqlalchemy.orm import *
-from flask import *
+from flask import Flask, render_template, redirect, url_for, request, session
 from sqlalchemy import create_engine
 from database_setup import Base, User
 from sqlalchemy.orm import scoped_session, sessionmaker
-
+import hashlib
 
 engine = create_engine('sqlite:///flasky.db')
 Base.metadata.create_all(engine)
 Base.metadata.bind = engine
 
-#DBSessionMaker = sessionmaker(bind=engine)
-#DBSession = DBSessionMaker()
 DBSession = scoped_session(sessionmaker())
 app = Flask(__name__)
+app.secret_key = 'super secret string'
+
 def hash_password(password):
 	return hashlib.md5(password.encode()).hexdigest()
 
 def validate(name, password):
-	print('in validate')
-	query = DBSession.query(User)#.filter(User.name.in_([name]),User.password.in_([hash_password(password)]))
-	print('after query')
+	query = DBSession.query(User).filter(User.name.in_([name]),User.password.in_([hash_password(password)]))
 	return query.first() != None
 
 
@@ -37,19 +34,17 @@ def signin():
 	if request.method == 'POST':
 		name = str(request.form['username'])
 		password = str(request.form['password'])
-		print('pre validate')
 		is_valid = validate(name, password)
-		print('1')
 		if is_valid == False:
-			print('1')
+			print('is valid = false')
 			error = 'Invalid credentials. Please try again.'
 		else:
-			print('2')
+			print('is valid = true')
+			print(session)
 			session['name'] = name
-			print('2')
+			print('session set')
 			return redirect(url_for('lhome'))
-			print('3')
-	print('4')
+	print('outside IF')
 	return render_template('signin.html', error = error)
 
 
@@ -67,11 +62,8 @@ def signup():
 		new_user= User(name=new_name,email=new_email,password=new_password,age = new_age)
 		DBSession.add(new_user)
 		DBSession.commit()
-		print('0')
-		session['name'] = name
-		print('1')
+		session['name'] = new_name
 		return redirect(url_for('lhome'))
-		print('2')
 
 @app.route('/contact')
 def contact():
@@ -88,10 +80,14 @@ def fullstory():
 
 @app.route('/lhome')
 def lhome():
+	print('in lhome')
 	name = session.get('name')
+	print('after session get')
 	if not name:
+		print('not name')
 		return redirect(url_for('signin'))
 	else:
+		print('good name')
 		return render_template('lhome', name = name)
 
 
