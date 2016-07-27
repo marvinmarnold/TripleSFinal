@@ -12,13 +12,13 @@
     <title>TripleS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+ 
     <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
-    <link href="css/new.min.css" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/freelancer.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/new.min.css')}}" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -81,21 +81,19 @@
                     <div class="intro-text">
                         <span class="name">TripleS</span>
                         <hr class="star-light">
-			<span class="skills">Breaking Stereotypes, <br> One Story At a Time.</span>
-            <br>
-            <br>
+			<span class="skills">Breaking Stereotypes. <br> One Story At A Time.</span>
+			<h1> Sign In </h1>
+			<br>
 			<form id="frm2" action="{{url_for('signin')}}"" method="POST">
 			
 			<input type="text" id="username" name="username" placeholder="username" required="yes" autocomplete="on">
 			<br><br>
 			<input type="password" id="password" name="password" placeholder="password" required="yes" autocomplete="off">
 			<br><br>
-			<button type="submit" class="btn btn-primary btn-lg" id="submit" name="submit" value="submit" action= "{{url_for('signin')}}">Sign In</button><br><br>
+			<button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit" action= "{{url_for('signin')}}">Sign In</button><br><br>
+			<br>
 
 			</form>
-               <br>
-               <p> Don't have an account? <Button href="file:///home/student/Desktop/FinalTripleS/startbootstrap-freelancer-1.1.0/signup2.html" class="btn btn-primary"> Sign up </Button> </p>
-
                     </div>
                 </div>
             </div>
