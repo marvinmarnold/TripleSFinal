@@ -49,8 +49,10 @@ def signin():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
 	if request.method == 'GET':
-		return render_template('signup.html')
+		print('1')
+		return render_template('newsignup2.html')
 	else:
+		print('2')
 		new_name = request.form['username']
 		new_email = request.form['email']
 		new_password = hash_password(request.form['password'])
