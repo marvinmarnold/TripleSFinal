@@ -25,15 +25,21 @@
 </head>
 <body id="page-top" class="index">
 {% block navbar %}
+
     <!-- Navigation -->
-   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    <span class="sr-only">Profile</span> Menu <i class="fa fa-bars"></i>
                 </button>
+                <a class="navbar-brand" href="#page-top"><img id="logo" src="static/img/logoTS.svg"></a>
                 <a class="navbar-brand" href="#page-top">Stories Smash Stereotypes</a>
+                <style> #logo{
+                    height:200%
+                    }
+                </style>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -43,16 +49,19 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">{{user.name}}</a>
+                        <a href="#page-top">My Profile</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">Home</a>
+                        <a href="#about">My Stories</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">About</a>
+                        <a href="home.html">Home</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="{{url_for('signin')}}">Log Out</a>
+                        <a href="#">Settings</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html">Log Out</a>
                     </li>
                 </ul>
             </div>

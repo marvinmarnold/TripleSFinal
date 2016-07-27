@@ -75,6 +75,10 @@ def profile():
 		user=DBSession.query(User).filter_by(name = name).first()
 		return render_template("profile.html",user = user)
 
+@app.route('/about')
+def about():
+		return render_template("about.html")
+
 
 if __name__=="__main__":
  	app.run()
