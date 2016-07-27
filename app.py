@@ -73,15 +73,14 @@ def fullstory():
 
 @app.route('/home')
 def home():
-	print('in home')
 	name = session.get('name')
 	print('after session get')
 	if not name:
 		print('not name')
 		return redirect(url_for('signin'))
 	else:
-		print('good name')
-		return render_template('home.html', name = name)
+		print('good name %s' ,name)
+		return render_template("home.html")
 
 
 @app.route('/profile')
