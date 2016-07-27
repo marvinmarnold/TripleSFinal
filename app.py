@@ -77,7 +77,13 @@ def profile():
 
 @app.route('/about')
 def about():
-		return render_template("about.html")
+	name = session.get('name')
+	if not name:
+		return redirect(url_for('signin'))
+	else:
+		user=DBSession.query(User).filter_by(name = name).first()
+		return render_template("about.html",user = user)
+
 
 
 if __name__=="__main__":
