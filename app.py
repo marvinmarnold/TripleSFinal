@@ -40,7 +40,7 @@ def signin():
 			print('is valid = true')
 			session['name'] = name
 			return redirect(url_for('home'))
-	print('else')
+	session['name'] = None
 	return render_template('index.html', error = error)
 
 
@@ -74,13 +74,11 @@ def fullstory():
 @app.route('/home')
 def home():
 	name = session.get('name')
-	print('after session get')
 	if not name:
-		print('not name')
 		return redirect(url_for('signin'))
 	else:
-		print('good name %s' ,name)
-		return render_template("home.html")
+		user=DBSession.query(User).filter_by(name = name).first()
+		return render_template("home.html",user = user)
 
 
 @app.route('/profile')
