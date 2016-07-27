@@ -42,10 +42,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <a href="#about">{{user.name}}</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                        <a href="#about">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="{{url_for('signin')}}">Log Out</a>
                     </li>
                 </ul>
             </div>
