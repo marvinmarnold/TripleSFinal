@@ -1,0 +1,137 @@
+<html>
+<body>
+<!-- {% extends 'base.html' %} -->
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+            <br><br><br><br>
+                <h1 class="page-header">Story Time!
+                    <h6>Want to upload your story? Send it to us at <h5>ProjectTripleS@gmail.com</h5> </h6>
+                <style>
+                    h6{
+                        padding-left: 800px;
+                        font-size: 100%;
+                    }
+                    h5{
+                        color: blue;
+                        font-size: 100%;
+                        padding-left: 800px;
+                    }
+                </style>
+                </h1>
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="{{ url_for('static',filename='img/story 1.jpg')}}" alt="">
+                </a>
+                <h3>
+                    <a href="#">The Boy who loved pink</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="{{ url_for('static',filename='img/story2.jpg')}}" alt="">
+                </a>
+                <h3>
+                    <a href="#">Meow & Ruff</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="{{ url_for('static',filename='img/story3.jpg')}}" alt="">
+                </a>
+                <h3>
+                    <a href="#">Blondy finished school</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="{{ url_for('static',filename='img/story4.jpg')}}" alt="">
+                </a>
+                <h3>
+                    <a href="#">lady bugs in love</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Five</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Six</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+    <!-- /.container -->
+{% endblock %}
+</body>
+</html>
