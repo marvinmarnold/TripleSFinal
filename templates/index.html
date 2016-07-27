@@ -85,13 +85,14 @@
                         <hr class="star-light">
 			<span class="skills">Breaking Stereotypes. <br> One Story At a Time.</span>
 			<br><br><br>
-			<form id="frm2" action="{{url_for('signin')}}" method="POST">
-			
+			<form id="frm2" action="{{url_for('home')}}" method="GET">
+			<font color="black">
 			<input type="text" id="username" name="username" placeholder="username" required="yes" autocomplete="on">
 			<br><br>
 			<input type="password" id="password" name="password" placeholder="password" required="yes" autocomplete="off">
+            </font>
 			<br><br>
-			<button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit" action= "{{url_for('signin')}}">Sign In</button><br><br>
+			<button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit" action= "{{url_for('home')}}">Sign In</button><br><br>
 
             </form>
             
