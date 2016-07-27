@@ -23,9 +23,6 @@ def validate(name, password):
 
 
 
-
-
-
 @app.route('/', methods=['GET', 'POST'])
 def signin():
 	error = None
@@ -34,10 +31,8 @@ def signin():
 		password = str(request.form['password'])
 		is_valid = validate(name, password)
 		if is_valid == False:
-			print('is valid = false')
 			error = 'Invalid credentials. Please try again.'
 		else:
-			print('is valid = true')
 			session['name'] = name
 			return redirect(url_for('home'))
 	session['name'] = None
@@ -45,14 +40,11 @@ def signin():
 
 
 
-
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
 	if request.method == 'GET':
-		print('1')
 		return render_template('signup2.html')
 	else:
-		print('2')
 		new_name = request.form['username']
 		new_email = request.form['email']
 		new_password = hash_password(request.form['password'])
@@ -65,12 +57,6 @@ def signup():
 
 
 
-
-@app.route('/fullstory')
-def fullstory():
- 	return render_template("fullstory.html")
-
-
 @app.route('/home')
 def home():
 	name = session.get('name')
@@ -80,10 +66,15 @@ def home():
 		user=DBSession.query(User).filter_by(name = name).first()
 		return render_template("home.html",user = user)
 
-
 @app.route('/profile')
 def profile():
-	return render_template("profile.html")
+	name = session.get('name')
+	if not name:
+		return redirect(url_for('signin'))
+	else:
+		user=DBSession.query(User).filter_by(name = name).first()
+		return render_template("profile.html",user = user)
+
 
 if __name__=="__main__":
  	app.run()
