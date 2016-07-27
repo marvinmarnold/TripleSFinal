@@ -39,9 +39,9 @@ def signin():
 		else:
 			print('is valid = true')
 			session['name'] = name
-			return redirect(url_for('lhome'))
+			return redirect(url_for('home'))
 	print('else')
-	return render_template('newindex.html', error = error)
+	return render_template('index.html', error = error)
 
 
 
@@ -50,7 +50,7 @@ def signin():
 def signup():
 	if request.method == 'GET':
 		print('1')
-		return render_template('newsignup2.html')
+		return render_template('signup2.html')
 	else:
 		print('2')
 		new_name = request.form['username']
@@ -61,24 +61,19 @@ def signup():
 		DBSession.add(new_user)
 		DBSession.commit()
 		session['name'] = new_name
-		return redirect(url_for('lhome'))
+		return redirect(url_for('home'))
 
-@app.route('/contact')
-def contact():
-	return render_template("contact.html")
 
-@app.route('/home')
-def home():
-	return render_template("home.html")
+
 
 @app.route('/fullstory')
 def fullstory():
  	return render_template("fullstory.html")
 
 
-@app.route('/lhome')
-def lhome():
-	print('in lhome')
+@app.route('/home')
+def home():
+	print('in home')
 	name = session.get('name')
 	print('after session get')
 	if not name:
@@ -86,7 +81,7 @@ def lhome():
 		return redirect(url_for('signin'))
 	else:
 		print('good name')
-		return render_template('lhome.html', name = name)
+		return render_template('home.html', name = name)
 
 
 @app.route('/profile')
