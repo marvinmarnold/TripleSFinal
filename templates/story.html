@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <!-- Page Content -->
+    <center>
     <div class="container">
 
         <!-- Page Header -->
@@ -16,17 +17,16 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
+        <center>
         <div class="row">
-            <div class="col-md-6 portfolio-item">
                 <a href="">
-                    <img class="img-responsive" src="{{ url_for('static',filename='img/story1.jpg')}}" alt="">
+                    <img class="img-responsive" src="{{ url_for('static',filename='{{story.pic}}')}}" alt="">
                 </a>
-                <h3>
-                    <a href="">The Boy who loved pink</a>
-                </h3>
+
                 <p>{{story.story}}</p>
-            </div>
         </div>
+        </center>
+    </center>
         <!-- /.row -->
 
     <!-- /.container -->

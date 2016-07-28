@@ -85,7 +85,7 @@ def about():
 		return render_template("about.html",user = user)
 
 
-@app.route('/story/<sid>')
+@app.route('/story/<int:sid>')
 def story(sid):
 	name = session.get('name')
 	if not name:
@@ -93,7 +93,6 @@ def story(sid):
 	else:
 		user=DBSession.query(User).filter_by(name = name).first()
 		story = DBSession.query(Story).filter_by(id = sid).first()
-		print(name,story.id)
 		return render_template("story.html", story = story, user = user)
 
 
@@ -104,9 +103,9 @@ def story(sid):
 @app.route('/newstory', methods=['GET', 'POST'])
 def newstory():
 	if request.method == 'GET':
-		return render_template('signup1.html')
+		return render_template('test.html')
 	else:
-		new_story=Story(name= 'The Boy Who Loved Pink',writer='Loay',story='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat faucibus luctus. Sed ante lacus, vehicula id enim ut, efficitur accumsan orci. Donec nec velit urna. Curabitur arcu risus, imperdiet ac malesuada et, maximus vitae enim. Donec a rutrum tortor. Aliquam eu quam malesuada, euismod velit sit amet, aliquet purus. Aenean pharetra orci a turpis elementum dapibus. Morbi accumsan finibus consequat. ',pic='img/story1.jpg')
+		new_story=Story(name= 'The Inked Angel',writer='Shiran',story='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat faucibus luctus. Sed ante lacus, vehicula id enim ut, efficitur accumsan orci. Donec nec velit urna. Curabitur arcu risus, imperdiet ac malesuada et, maximus vitae enim. Donec a rutrum tortor. Aliquam eu quam malesuada, euismod velit sit amet, aliquet purus. Aenean pharetra orci a turpis elementum dapibus. Morbi accumsan finibus consequat. ',pic='img/story7.jpeg.jpeg')
 		DBSession.add(new_story)
 		DBSession.commit()
 		return redirect(url_for('signin'))
