@@ -55,9 +55,6 @@ def signup():
 		session['name'] = new_name
 		return redirect(url_for('home'))
 
-
-@app.route('/story', methods=['GET', 'POST'])
-	def story():
 		
 
 
