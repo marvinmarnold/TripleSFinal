@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, redirect, url_for, request, session
 from sqlalchemy import create_engine
-from database_setup import Base, User
+from database_setup import Base, User, Story
 from sqlalchemy.orm import scoped_session, sessionmaker
 import hashlib
 
@@ -83,6 +83,33 @@ def about():
 	else:
 		user=DBSession.query(User).filter_by(name = name).first()
 		return render_template("about.html",user = user)
+
+
+@app.route('/story')
+def story():
+	name = session.get('name')
+	if not name:
+		return redirect(url_for('signin'))
+	else:
+		user=DBSession.query(User).filter_by(name = name).first()
+		story = DBSession.query(Story).filter_by(id = 1).first()
+		print(name,story.id)
+		return render_template("story.html", story = story, user = user)
+
+
+
+
+
+
+@app.route('/newstory', methods=['GET', 'POST'])
+def newstory():
+	if request.method == 'GET':
+		return render_template('signup1.html')
+	else:
+		new_story=Story(name= 'The Boy Who Loved Pink',writer='Loay',story='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat faucibus luctus. Sed ante lacus, vehicula id enim ut, efficitur accumsan orci. Donec nec velit urna. Curabitur arcu risus, imperdiet ac malesuada et, maximus vitae enim. Donec a rutrum tortor. Aliquam eu quam malesuada, euismod velit sit amet, aliquet purus. Aenean pharetra orci a turpis elementum dapibus. Morbi accumsan finibus consequat. ',pic='img/story1.jpg')
+		DBSession.add(new_story)
+		DBSession.commit()
+		return redirect(url_for('signin'))
 
 
 
