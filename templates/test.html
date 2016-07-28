@@ -71,11 +71,18 @@
                 <div class="col-lg-offset-4 col-lg-4">
                     <img class="img-responsive" src="img/profile.png" alt="">
                     <div class="intro-text">
-                        <span class="name">Sign Up</span>
+                        <span class="name">add story</span>
                         <hr class="star-light">
             <span class="skills">Breaking Stereotypes. <br> One Story At A Time.</span>
             <form id="frm3" action="{{url_for('newstory')}}" method="POST">
-
+                    <font color="black"><input type="text" id="username" name="username"  placeholder="story title " required="yes"></font>
+                    <br><br>
+                    <font color="black"><input type="text" id="password" name="password" placeholder="content" required="yes"></font>
+                    <br><br>
+                    <font color="black"><input type="text" id="bla" name="email" placeholder="writer" required="yes"></font>
+                    <br><br>
+                    <font color="black"><input type="text" name="age" placeholder="pic" required="yes"></font>
+                    <br><br>
 
 
 
