@@ -19,9 +19,7 @@
         <!-- Projects Row -->
         <center>
         <div class="row">
-                <a href="">
-                    <img class="img-responsive" src="{{ url_for('static',filename='{{story.pic}}')}}" alt="">
-                </a>
+                    <img class="img-responsive" src="{{ url_for('static',filename=story.pic)}}" alt="">
 
                 <p>{{story.story}}</p>
         </div>
