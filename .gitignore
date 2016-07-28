@@ -86,6 +86,9 @@ ENV/
 .spyderproject
 
 # Rope project settings
+
+*.pyc
+
 .ropeproject
 
 *.db

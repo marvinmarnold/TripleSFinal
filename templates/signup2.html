@@ -11,6 +11,8 @@
 
     <title>TripleS-Sign Up</title>
 
+    <link rel="icon" href="{{url_for('static',filename='img/logo2.png')}}" type="image/x-icon">
+
     <!-- Bootstrap Core CSS -->
     <link href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -35,18 +37,19 @@
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container-fluid">
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Sign Up</span> Menu <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top"><img id="logo" src="static/img/logoTS.svg"></a>
-                <a class="navbar-brand" href="#page-top">Stories Smash Stereotypes</a>
+                <a class="navbar-brand" href="#page-top"><img id="logo" class="img-responsive" style="float: left;
+                margin-top:-20px" src="{{ url_for('static',filename='img/logo2.png')}}" alt="">Stories Smash Stereotypes</a>
                 <style> #logo{
-                    height:200%
+                    height:300%
                     }
-                </style></div>
+                </style>
+            </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -69,28 +72,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-offset-4 col-lg-4">
-                    <img class="img-responsive" src="img/profile.png" alt="">
                     <div class="intro-text">
                         <span class="name">Sign Up</span>
                         <hr class="star-light">
-            <span class="skills">Breaking Stereotypes. <br> One Story At A Time.</span>
-            <form id="frm3" action="{{url_for('signup')}}" method="POST">
+                        <span class="skills">Breaking Stereotypes. <br> One Story At a Time.</span>
+                        <form id="frm3" action="{{url_for('signup')}}" method="POST">
 
 
 
-<font color="black"><input type="text" id="username" name="username"  placeholder="username" required="yes"></font>
-<br><br>
-<font color="black"><input type="password" id="password" name="password" placeholder="password" required="yes"></font>
-<br><br>
-<font color="black"><input type="email" id="bla" name="email" placeholder="Email" required="yes"></font>
-<br><br>
-<font color="black"><input type="number" name="age" placeholder="Age"></font>
-<br><br>
-<button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Sumbit</button>
-<br><br>
+                        <br><font color="black"><input type="text" id="username" name="username"  placeholder="username" required="yes"></font>
+                        <br><br>
+                        <font color="black"><input type="password" id="password" name="password" placeholder="password" required="yes"></font>
+                        <br><br>
+                        <font color="black"><input type="email" id="bla" name="email" placeholder="email" required="yes"></font>
+                        <br><br>
+                        <font color="black"><input type="number" name="age" placeholder="age"></font>
+                        <br><br>
+                        <button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Sumbit</button>
+                        <br><br>
 
 
-</form>
+                        </form>
                     </div>
                 </div>
             </div>

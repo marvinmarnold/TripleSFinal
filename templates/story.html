@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Page Content -->
+    <center>
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+            <br><br><br><br>
+                <h1 class="page-header">{{story.name}}
+                    <h6>Want to upload your story? Send it to us at <h5>ProjectTripleS@gmail.com</h5> </h6>
+                </h1>
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <center>
+        <div class="row">
+                    <img class="img-responsive" src="{{ url_for('static',filename=story.pic)}}" alt="">
+
+                <p>{{story.story}}</p>
+        </div>
+        </center>
+    </center>
+        <!-- /.row -->
+
+    <!-- /.container -->
+{% endblock %}

@@ -7,17 +7,32 @@
         <div class="row">
             <div class="col-lg-12">
             <br><br><br><br>
-                <h1 class="page-header">Story Time!
+                <h1 class="page-header">Story Time!</h1>
+
+                 <input type="text" name="search" placeholder="Search..">
+                 <br><br>
+                <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter Stories
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Gender Based</a></li>
+                <li><a href="#">Racial Based</a></li>
+                <li><a href="#">Appearance Based</a></li>
+                <li><a href="#">Religion Based</a></li>
+                <li><a href="#">Recomended</a></li>
+            </ul>
+        </div>
+        <br>
                     <h6>Want to upload your story? Send it to us at <h5>ProjectTripleS@gmail.com</h5> </h6>
                 <style>
                     h6{
-                        padding-left: 800px;
+                        
                         font-size: 100%;
                     }
                     h5{
                         color: blue;
                         font-size: 100%;
-                        padding-left: 800px;
+                        
                     }
                 </style>
                 </h1>
@@ -30,10 +45,10 @@
         <div class="row">
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                    <img class="img-responsive" src="{{ url_for('static',filename='img/story 1.jpg')}}" alt="">
+                    <img class="img-responsive" src="{{ url_for('static',filename='img/story8.jpeg.jpg')}}" alt="">
                 </a>
                 <h3>
-                    <a href="#">The Boy who loved pink</a>
+                    <a href="#">The Vegeterian Argentinian</a>
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
@@ -56,16 +71,16 @@
                     <img class="img-responsive" src="{{ url_for('static',filename='img/story3.jpg')}}" alt="">
                 </a>
                 <h3>
-                    <a href="#">Blondy finished school</a>
+                    <a href="#">Blondy Finished School</a>
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                    <img class="img-responsive" src="{{ url_for('static',filename='img/story4.jpg')}}" alt="">
+                    <img class="img-responsive" src="{{ url_for('static',filename='img/story6.jpeg.jpg')}}" alt="">
                 </a>
                 <h3>
-                    <a href="#">lady bugs in love</a>
+                    <a href="#">Karate Girl</a>
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
@@ -76,19 +91,19 @@
         <div class="row">
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                    <img class="img-responsive" src="{{ url_for('static',filename='img/story5.jpeg.jpg')}}" alt="">
                 </a>
                 <h3>
-                    <a href="#">Project Five</a>
+                    <a href="#">The Church Mouse & The Mosque Mouse</a>
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                    <img class="img-responsive" src="{{ url_for('static',filename='img/story4.jpg')}}" alt="">
                 </a>
                 <h3>
-                    <a href="#">Project Six</a>
+                    <a href="#">Ladybug Love Story</a>
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>

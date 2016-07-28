@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>TripleS</title>
+    <link rel="icon" href="{{url_for('static',filename='img/logo2.png')}}" type="image/x-icon">
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -33,12 +34,12 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Profile</span> Menu <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top"><img id="logo" src="static/img/logoTS.svg"></a>
-                <a class="navbar-brand" href="#page-top">Stories Smash Stereotypes</a>
+                <a class="navbar-brand" href="#page-top"><img id="logo" class="img-responsive" style="float: left;
+                margin-top:-20px" src="{{ url_for('static',filename='img/logo2.png')}}" alt="">Stories Smash Stereotypes</a>
                 <style> #logo{
-                    height:200%
+                    height:300%
                     }
                 </style>
             </div>
@@ -55,11 +56,22 @@
                     <li class="page-scroll">
                         <a href="{{url_for('home')}}">Home</a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#">Settings</a>
-                    </li>
+                    
                     <li class="page-scroll">
                         <a href="{{url_for('about')}}">About</a>
+                    </li>
+
+                    <li class=" btn btn-primary dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <a href='#' >SETTINGS</a>
+                        <span class="caret"></span></button>
+                         <ul class=" btn btn-primary dropdown-menu">
+                            <li><a href="#">User Name</a></li>
+                            <li><a href="#">Password</a></li>
+                            <li><a href="#">Profile Picture</a></li>
+                            <li><a href="#">Help</a></li>
+                           
+                        </ul>
                     </li>
                     <li class="page-scroll">
                         <a href="{{url_for('signin')}}">Log Out</a>
@@ -92,6 +104,7 @@
     <script src="{{ url_for('static',filename='js/freelancer.min.js')}}"></script>
 
 </body>
+
 
 </html>
 
