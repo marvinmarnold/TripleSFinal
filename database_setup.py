@@ -29,10 +29,10 @@ class Story(Base):
 
 
 
-class Comment(Base):
-    __tablename__ = 'Comments'
-    id = Column(Integer, primary_key=True)
-    userid = Column(Integer)
-    storyid = Column(Integer)
-    time = Column(time)
+#class Comment(Base):
+    #__tablename__ = 'Comments'
+    #id = Column(Integer, primary_key=True)
+ #   userid = Column(Integer)
+  #  storyid = Column(Integer)
+   # time = Column(Integer)
 
