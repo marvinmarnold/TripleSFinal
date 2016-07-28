@@ -55,7 +55,6 @@ def signup():
 		session['name'] = new_name
 		return redirect(url_for('home'))
 
-		
 
 
 @app.route('/home')
