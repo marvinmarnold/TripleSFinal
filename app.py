@@ -85,14 +85,14 @@ def about():
 		return render_template("about.html",user = user)
 
 
-@app.route('/story')
-def story():
+@app.route('/story/<sid>')
+def story(sid):
 	name = session.get('name')
 	if not name:
 		return redirect(url_for('signin'))
 	else:
 		user=DBSession.query(User).filter_by(name = name).first()
-		story = DBSession.query(Story).filter_by(id = 1).first()
+		story = DBSession.query(Story).filter_by(id = sid).first()
 		print(name,story.id)
 		return render_template("story.html", story = story, user = user)
 
