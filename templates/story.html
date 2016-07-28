@@ -7,24 +7,37 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
+
             <br><br><br><br>
-                <h1 class="page-header">{{story.name}}
+                <h1 class="page-header">{{story.name}} lorem ipsum
                     <h6>Want to upload your story? Send it to us at <h5>ProjectTripleS@gmail.com</h5> </h6>
                 </h1>
 
+
             </div>
         </div>
-        <!-- /.row -->
 
+        <!-- /.row -->
+        
         <!-- Projects Row -->
+
         <center>
         <div class="row">
-                    <img class="img-responsive" src="{{ url_for('static',filename=story.pic)}}" alt="">
+        <img class="img-responsive" src="{{ url_for('static',filename=story.pic)}}" alt="">
+                <br>
+                <p style="border:2px solid #286090; border-radius:10px">{{story.story}}Lorem ipsum dolor sit amet, ea nam decore nostrud, errem omnes reformidans ex quo. Est aeterno denique perpetua id, an illud referrentur eos. Vim no prompta delicatissimi, partem latine lucilius te eam. Amet erroribus salutatus mel in, accusamus laboramus eum an. Et definiebas assueverit cum. An has duis atqui vituperata. Augue legere tacimates mei cu, sea dolore labore salutandi in.
 
-                <p>{{story.story}}</p>
+                Ne dictas accumsan vix, impedit ceteros cum et. Ea aperiri recteque has, at brute nonumes evertitur eum. Vis te nostrum dissentiet consectetuer. An prima impetus deserunt est, in pri ipsum eirmod nominavi. No est integre laoreet, id has inciderint complectitur concludaturque.
+
+                Nec doming oblique ea, duo ea iuvaret recteque, te pri unum equidem imperdiet. Nec quas idque iudicabit eu, ut mutat eleifend mel. Vim cu torquatos tincidunt intellegam. Cum cu dolor essent. Veritus docendi eu quo, enim nominati adversarium vim no, ea per decore feugait adversarium.
+
+                Nonumes dignissim ius ea, noluisse electram cu eam. Legendos partiendo eum in, sale molestiae id quo, rebum dolorum vim id. Amet tollit vix ad, veri timeam urbanitas vim eu, at vel magna illud commune. Usu mazim cetero pertinax te, cu pri nostro nominati, vis maiestatis disputando ad.
+
+                Graeci causae accumsan qui no. Commodo indoctum vel eu, ne duo antiopam principes, eleifend dissentiet in per. Qui at animal atomorum hendrerit, contentiones delicatissimi sit an. Vim at lorem dignissim vulputate, oporteat intellegebat sea an, at vis justo urbanitas adipiscing. Id nulla ceteros mandamus vix. Ea cum errem munere.</p>
         </div>
         </center>
     </center>
+    <input type="text" name="comment"><button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Comment!</button>  <button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Like Story</button>{{story.likes}} Likes
         <!-- /.row -->
 
     <!-- /.container -->
