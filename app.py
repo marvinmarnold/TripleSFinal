@@ -105,7 +105,7 @@ def newstory():
 	if request.method == 'GET':
 		return render_template('test.html')
 	else:
-		new_story=Story(name= 'The Inked Angel',writer='Shiran',story='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat faucibus luctus. Sed ante lacus, vehicula id enim ut, efficitur accumsan orci. Donec nec velit urna. Curabitur arcu risus, imperdiet ac malesuada et, maximus vitae enim. Donec a rutrum tortor. Aliquam eu quam malesuada, euismod velit sit amet, aliquet purus. Aenean pharetra orci a turpis elementum dapibus. Morbi accumsan finibus consequat. ',pic='img/story7.jpeg.jpeg')
+		new_story=Story(name= 'Ladybug Love Story',writer='Rama',story='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat faucibus luctus. Sed ante lacus, vehicula id enim ut, efficitur accumsan orci. Donec nec velit urna. Curabitur arcu risus, imperdiet ac malesuada et, maximus vitae enim. Donec a rutrum tortor. Aliquam eu quam malesuada, euismod velit sit amet, aliquet purus. Aenean pharetra orci a turpis elementum dapibus. Morbi accumsan finibus consequat. ',pic='img/story4.jpg')
 		DBSession.add(new_story)
 		DBSession.commit()
 		return redirect(url_for('signin'))
