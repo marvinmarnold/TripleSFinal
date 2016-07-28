@@ -25,4 +25,14 @@ class Story(Base):
     pic = Column(Integer)
     likes = Column(Integer)
     date = Column(Integer)
+    cat = Column(String)
+
+
+
+#class Comment(Base):
+    #__tablename__ = 'Comments'
+    #id = Column(Integer, primary_key=True)
+ #   userid = Column(Integer)
+  #  storyid = Column(Integer)
+   # time = Column(Integer)
 
