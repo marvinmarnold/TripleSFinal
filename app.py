@@ -85,7 +85,7 @@ def about():
 		return render_template("about.html",user = user)
 
 
-@app.route('/story/<sid>')
+@app.route('/story/<int:sid>')
 def story(sid):
 	name = session.get('name')
 	if not name:
