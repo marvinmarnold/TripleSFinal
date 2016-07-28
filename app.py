@@ -56,10 +56,6 @@ def signup():
 		return redirect(url_for('home'))
 
 
-@app.route('/story', methods=['GET', 'POST'])
-	def story():
-		
-
 
 @app.route('/home')
 def home():
