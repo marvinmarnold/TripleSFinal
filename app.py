@@ -100,12 +100,16 @@ def story(sid):
 
 
 
-@app.route('/newstory', methods=['GET', 'POST'])
+@app.route('/somerandomstufftoaddstories', methods=['GET', 'POST'])
 def newstory():
 	if request.method == 'GET':
 		return render_template('test.html')
 	else:
-		new_story=Story(name= 'Ladybug Love Story',writer='Rama',story='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat faucibus luctus. Sed ante lacus, vehicula id enim ut, efficitur accumsan orci. Donec nec velit urna. Curabitur arcu risus, imperdiet ac malesuada et, maximus vitae enim. Donec a rutrum tortor. Aliquam eu quam malesuada, euismod velit sit amet, aliquet purus. Aenean pharetra orci a turpis elementum dapibus. Morbi accumsan finibus consequat. ',pic='img/story4.jpg')
+		new_name = request.form['username']
+		new_writer = request.form['email']
+		new_content = request.form['password']
+		new_pic = request.form['age']
+		new_story=Story(name= new_name,writer=new_writer, story= new_content , pic= new_pic)
 		DBSession.add(new_story)
 		DBSession.commit()
 		return redirect(url_for('signin'))
@@ -113,4 +117,4 @@ def newstory():
 
 
 if __name__=="__main__":
- 	app.run()
+ 	app.run(host = "0.0.0.0",debug = True)
