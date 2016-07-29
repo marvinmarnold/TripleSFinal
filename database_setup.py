@@ -25,7 +25,6 @@ class Story(Base):
     pic = Column(Integer)
     likes = Column(Integer)
     date = Column(Integer)
-    cat = Column(String)
 
 
 
