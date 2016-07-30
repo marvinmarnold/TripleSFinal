@@ -76,34 +76,38 @@
 
     <!-- Header -->
     <header>
+    <br><br>
         <div class="container">
             <div class="row">
-                <div class="col-lg-offset-4 col-lg-4">
-                    <div class="intro-text" style='float: right;'>
-                        <span class="name" style='float: left;'>Triple</span><span class="name" style='color: orange;'>S</span>
-                    
-			<span class="skills"><b>Breaking Stereotypes, <br> One Story At a Time.</b></span>
-			<br><br>
-			<form id="frm2" action="{{url_for('signin')}}" method="POST">
-			<font color="black">
-			<input type="text" id="username" name="username" placeholder="username" required="yes" autocomplete="on">
-			<br><br>
-			<input type="password" id="password" name="password" placeholder="password" required="yes" autocomplete="off">
-            </font>
-			<br><br>
-			<button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit" action= "{{url_for('signin')}}">Sign In</button><br>
-
-            </form>
-            
-            <form id="frm3" action="{{url_for('signup')}}" method="GET">
-            <p><b>Don't have an account ? Sign Up <a href="{{url_for('signup')}}" style="color:blue; font-size:100%;"> Here</a></b></p>           
-            
-            </form><br><br><br><br><br>
+                <div class="col-lg-6 col-xs-12">
+                    <div class="intro-text">
+                        <span class="name" style=' font-size: 7rem;display:inline'>Triple</span><span class="name" style='color: orange; font-size: 7rem;display:inline'>S</span>
+                        
+                        <p class="skills"><bTriple>Breaking Stereotypes, <br> One Story At a Time.</b></p>
                     </div>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <form id="frm2" action="{{url_for('signin')}}" method="POST">
+                        <font color="white">
+                        <h1> Story Time! </h1>
+                        <input type="text" id="username" name="username" placeholder="username" required="yes" autocomplete="on">
+                        <br><br>
+                        <input type="password" id="password" name="password" placeholder="password" required="yes" autocomplete="off">
+                        </font>
+                        <br><br>
+                        <button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit" action= "{{url_for('signin')}}">Sign In</button><br>
+
+                        </form>
+                        
+                        <form id="frm3" action="{{url_for('signup')}}" method="GET">
+                        <p><b>Don't have an account ? Sign Up <a href="{{url_for('signup')}}" style="color:blue; font-size:100%;"> Here</a></b></p>           
+                        
+                    </form>
                 </div>
             </div>
         </div>
     </header>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
 
     <!-- About Section -->
     <section class="success" id="about">
