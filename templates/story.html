@@ -21,15 +21,14 @@
         
         <!-- Projects Row -->
 
-        <center>
         <div class="row">
         <img class="img-responsive" src="{{ url_for('static',filename=story.pic)}}" alt="">
                 <br>
                 <p style="border:2px solid #286090; border-radius:10px">{{story.story}}</p>
         </div>
-        </center>
+    <br><button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Like</button> 47 Likes 
+    <br><br><input type="text" name="comment" placeholder="add a comment"><button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Submit</button>
     </center>
-    <input type="text" name="comment"><button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Comment!</button>  <button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit">Like Story</button>{{story.likes}} Likes
         <!-- /.row -->
 
     <!-- /.container -->

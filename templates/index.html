@@ -81,9 +81,9 @@
                 <div class="col-lg-offset-4 col-lg-4">
                     <div class="intro-text" style='float: right;'>
                         <span class="name" style='float: left;'>Triple</span><span class="name" style='color: orange;'>S</span>
-                    <br><br>
-			<span class="skills"><b>Breaking Stereotypes. <br> One Story At a Time.</b></span>
-			<br><br><br>
+                    
+			<span class="skills"><b>Breaking Stereotypes, <br> One Story At a Time.</b></span>
+			<br><br>
 			<form id="frm2" action="{{url_for('signin')}}" method="POST">
 			<font color="black">
 			<input type="text" id="username" name="username" placeholder="username" required="yes" autocomplete="on">
@@ -91,15 +91,14 @@
 			<input type="password" id="password" name="password" placeholder="password" required="yes" autocomplete="off">
             </font>
 			<br><br>
-			<button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit" action= "{{url_for('signin')}}">Sign In</button><br><br>
+			<button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit" action= "{{url_for('signin')}}">Sign In</button><br>
 
             </form>
             
-			<br>
             <form id="frm3" action="{{url_for('signup')}}" method="GET">
-            <p>Don't have an account ? Sign Up <a href="{{url_for('signup')}}" style="color:blue; font-size:100%;"> Here</a></p>           
+            <p><b>Don't have an account ? Sign Up <a href="{{url_for('signup')}}" style="color:blue; font-size:100%;"> Here</a></b></p>           
             
-            </form>
+            </form><br><br><br><br><br>
                     </div>
                 </div>
             </div>
