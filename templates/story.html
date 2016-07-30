@@ -1,7 +1,129 @@
-{% extends 'base.html' %}
-{% block content %}
-    <!-- Page Content -->
-    <center>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TripleS-Story Time!</title>
+    <link rel="icon" href="{{url_for('static',filename='img/logo2.png')}}" type="image/x-icon">
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/full-slider.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- Theme CSS -->
+    <link href="{{ url_for('static',filename='css/freelancer.min.css')}}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top"><img id="logo" class="img-responsive" style="float: left;
+                margin-top:-20px" src="{{ url_for('static',filename='img/logo2.png')}}" alt="">Stories Smash Stereotypes</a>
+                <style> #logo{
+                    height:300%
+                    }
+                </style>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="{{url_for('profile')}}">{{user.name}}</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="{{url_for('home')}}">Home</a>
+                    </li>
+                    
+                    <li class="page-scroll">
+                        <a href="{{url_for('about')}}">About</a>
+                    </li>
+
+                    <li class=" btn btn-primary dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <a href='#' >SETTINGS</a>
+                        <span class="caret"></span></button>
+                         <ul class=" btn btn-primary dropdown-menu">
+                            <li><a href="#">User Name</a></li>
+                            <li><a href="#">Password</a></li>
+                            <li><a href="#">Profile Picture</a></li>
+                            <li><a href="#">Help</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="{{url_for('signin')}}">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Full Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');""></div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+
+            <!-- Contact Section -->
+        <center>
     <div class="container">
 
         <!-- Page Header -->
@@ -9,8 +131,19 @@
             <div class="col-lg-12">
 
             <br><br><br><br>
-                <h1 class="page-header">{{story.name}} lorem ipsum
-                    <h6>Want to upload your story? Send it to us at <h5>ProjectTripleS@gmail.com</h5> </h6>
+                <h1 class="page-header">{{story.name}} 
+                                        <h6>Want to upload your story? Send it to us at <h5>ProjectTripleS@gmail.com</h5> </h6>
+                <style>
+                    h6{
+                        
+                        font-size: 100%;
+                    }
+                    h5{
+                        color: blue;
+                        font-size: 100%;
+                        
+                    }
+                </style>
                 </h1>
 
 
@@ -21,8 +154,6 @@
         
 
     </center>
-        <!-- /.row -->
-            <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -55,4 +186,20 @@
     </section>
 
     <!-- /.container -->
-{% endblock %}
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+
+</body>
+
+</html>
