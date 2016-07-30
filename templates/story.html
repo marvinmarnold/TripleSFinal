@@ -108,7 +108,7 @@
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');""></div>
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
             </div>
         </div>
 
@@ -130,17 +130,16 @@
         <div class="row">
             <div class="col-lg-12">
 
-            <br><br><br><br>
-                <h1 class="page-header">{{story.name}} 
-                                        <h6>Want to upload your story? Send it to us at <h5>ProjectTripleS@gmail.com</h5> </h6>
+                <h1 class="page-header"><b>{{story.name}} </b>
+                 <h6>Want to upload your story? Send it to us at <h5>ProjectTripleS@gmail.com</h5> </h6>
                 <style>
                     h6{
                         
-                        font-size: 100%;
+                        font-size: 170%;
                     }
                     h5{
                         color: blue;
-                        font-size: 100%;
+                        font-size: 170%;
                         
                     }
                 </style>
@@ -154,14 +153,13 @@
         
 
     </center>
-    <section id="contact">
+    <section id="contact" style='font-size: 150%;'>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <hr class="star-primary">
                 </div>
             </div>
-            <center><br><button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit"><b>Like</button> 47 Likes </b></center><br>
+            <center><br><button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit" style='padding: 6px 10px;font-size: 100%;'><b>Like</button> 47 Likes </b></center><br>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
@@ -176,7 +174,7 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-primary">Post</button>
+                                <button type="submit" class="btn btn-primary" style='padding: 6px 10px;font-size: 100%;'>Post</button>
                             </div>
                         </div>
                     </form>
@@ -188,10 +186,10 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="static/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({

@@ -83,31 +83,36 @@
                     <div class="intro-text">
                         <span class="name" style=' font-size: 7rem;display:inline'>Triple</span><span class="name" style='color: orange; font-size: 7rem;display:inline'>S</span>
                         
-                        <p class="skills"><bTriple>Breaking Stereotypes, <br> One Story At a Time.</b></p>
+                        <p class="skills"><bTriple>Breaking Stereotypes, <br> One Story At a Time.</b></p><br>
+                          <form id="frm3" action="{{url_for('signup')}}" method="GET">
+                        <p><b>Don't have an account ? Sign Up <a href="{{url_for('signup')}}" style="color:blue; font-size:100%;"> Here</a></b></p> 
                     </div>
+
+
+                        
+                    </form>
                 </div>
                 <div class="col-lg-6 col-xs-12">
                     <form id="frm2" action="{{url_for('signin')}}" method="POST">
                         <font color="white">
                         <h1> Story Time! </h1>
-                        <input type="text" id="username" name="username" placeholder="username" required="yes" autocomplete="on">
+                        <font color="black"><input type="text" id="username" name="username" placeholder="username" required="yes" autocomplete="on"></font>
                         <br><br>
-                        <input type="password" id="password" name="password" placeholder="password" required="yes" autocomplete="off">
+                        <font color="black"><input type="password" id="password" name="password" placeholder="password" required="yes" autocomplete="off"></font>
                         </font>
                         <br><br>
                         <button type="submit" class="btn btn-primary" id="submit" name="submit" value="submit" action= "{{url_for('signin')}}">Sign In</button><br>
 
                         </form>
-                        
-                        <form id="frm3" action="{{url_for('signup')}}" method="GET">
-                        <p><b>Don't have an account ? Sign Up <a href="{{url_for('signup')}}" style="color:blue; font-size:100%;"> Here</a></b></p>           
-                        
-                    </form>
+                        <br>
+                  
+
+                    <a href="#"><img src="https://s3.amazonaws.com/com.offerpop.services.media/images/media/551ab6e8ef95a64352493e40/551ab6e9ef95a64376b08d61.PNG" style="width:30%"></a>
                 </div>
             </div>
         </div>
     </header>
-    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+    <br> <br> <br> <br> <br> <br> <br>
 
     <!-- About Section -->
     <section class="success" id="about">
