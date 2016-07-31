@@ -12,10 +12,10 @@
     <title>TripleS-Story Time!</title>
     <link rel="icon" href="{{url_for('static',filename='img/logo2.png')}}" type="image/x-icon">
     <!-- Bootstrap Core CSS -->
-    <link href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename='css/full-slider.css')}}" rel="stylesheet">
-    <link href="{{ url_for('static',filename='vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <!-- Theme CSS -->
@@ -29,7 +29,6 @@
     <![endif]-->
 
 </head>
-
 <body>
 
     <!-- Navigation -->
@@ -87,8 +86,8 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <!-- Full Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
+        <!-- Full Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide" style='margin-top: 10rem;'>
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -100,15 +99,15 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="fill" style="background-image:url('/static/img/storypage1.png');"></div>
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="fill" style="background-image:url('/static/img/storypage2.jpg');"></div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('/static/img/storypage3.jpg');"></div>
             </div>
         </div>
 
@@ -121,8 +120,7 @@
         </a>
 
     </header>
-
-            <!-- Contact Section -->
+                <!-- Contact Section -->
         <center>
     <div class="container">
 
@@ -185,19 +183,23 @@
 
     <!-- /.container -->
 
+    </div>
+    <!-- /.container -->
+
     <!-- jQuery -->
-    <script src="static/js/jquery.js"></script>
+    <script src="{{ url_for('static',filename='js/jquery.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="static/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({
-        interval: 5000 //changes the speed
+        interval: false //changes the speed
     })
     </script>
-
 
 </body>
 
 </html>
+
