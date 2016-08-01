@@ -4,6 +4,9 @@ from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
 
 Base = declarative_base()
+engine = create_engine('sqlite:///flasky.db')
+Base.metadata.create_all(engine)
+Base.metadata.bind = engine
 
 class User(Base):
     __tablename__ = 'Users'
