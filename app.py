@@ -5,7 +5,9 @@ from database_setup import User, Story
 from sqlalchemy.orm import scoped_session, sessionmaker
 import hashlib
 
-
+engine = create_engine('sqlite:///flasky.db')
+Base.metadata.create_all(engine)
+Base.metadata.bind = engine
 
 DBSession = scoped_session(sessionmaker())
 app = Flask(__name__)
