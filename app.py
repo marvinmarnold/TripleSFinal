@@ -1,13 +1,11 @@
 
 from flask import Flask, render_template, redirect, url_for, request, session
 from sqlalchemy import create_engine
-from database_setup import User, Story
+from database_setup import Base, User, Story
 from sqlalchemy.orm import scoped_session, sessionmaker
 import hashlib
 
-engine = create_engine('sqlite:///flasky.db')
-Base.metadata.create_all(engine)
-Base.metadata.bind = engine
+
 
 DBSession = scoped_session(sessionmaker())
 app = Flask(__name__)
