@@ -1,8 +1,7 @@
 
 from flask import Flask, render_template, redirect, url_for, request, session
 from sqlalchemy import create_engine
-from database_setup import User, Story
-from sqlalchemy.orm import scoped_session, sessionmaker
+from database_setup import User, Story, DBSession
 import hashlib
 
 
