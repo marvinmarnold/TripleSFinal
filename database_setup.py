@@ -8,6 +8,9 @@ engine = create_engine('sqlite:///flasky.db')
 Base.metadata.create_all(engine)
 Base.metadata.bind = engine
 
+DBSession = scoped_session(sessionmaker())
+Base.query = DBSession.query_property()
+
 class User(Base):
     __tablename__ = 'Users'
     id = Column(Integer, primary_key=True)
