@@ -8,7 +8,7 @@ DATABASE_URL = os.environ['DATABASE_URL']
 
 Base = declarative_base()
 engine = create_engine(DATABASE_URL, convert_unicode=True)
-Base.metadata.create_all(engine)
+
 Base.metadata.bind = engine
 
 DBSession = scoped_session(sessionmaker(autocommit=False,
@@ -36,6 +36,7 @@ class Story(Base):
     likes = Column(Integer)
     date = Column(Integer)
 
+Base.metadata.create_all(engine)
 
 #class Comment(Base):
     #__tablename__ = 'Comments'
