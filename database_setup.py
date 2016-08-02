@@ -3,12 +3,16 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker, scoped_session
 from sqlalchemy import create_engine
 
+DATABASE_URL = os.environ['DATABASE_URL']
+
 Base = declarative_base()
-engine = create_engine('sqlite:///flasky.db')
+engine = create_engine(DATABASE_URL, convert_unicode=True)
 Base.metadata.create_all(engine)
 Base.metadata.bind = engine
 
-DBSession = scoped_session(sessionmaker())
+DBSession = scoped_session(sessionmaker(autocommit=False,
+                                         autoflush=False,
+                                         bind=engine))
 Base.query = DBSession.query_property()
 
 class User(Base):
@@ -19,12 +23,11 @@ class User(Base):
     password = Column(String)
     age = Column(Integer)
     stat = Column(Integer)
-    
 
 
 class Story(Base):
     __tablename__ = 'Stories'
-    id = Column(Integer, primary_key=True)    
+    id = Column(Integer, primary_key=True)
     name = Column(String)
     writer = Column(String)
     story = Column (String)
@@ -33,11 +36,9 @@ class Story(Base):
     date = Column(Integer)
 
 
-
 #class Comment(Base):
     #__tablename__ = 'Comments'
     #id = Column(Integer, primary_key=True)
  #   userid = Column(Integer)
   #  storyid = Column(Integer)
    # time = Column(Integer)
-
